@@ -1,5 +1,5 @@
 ---
-import "@fontsource/lato";
+import "@fontsource/roboto-condensed";
 ---
 
 <!DOCTYPE html>
@@ -11,16 +11,20 @@ import "@fontsource/lato";
     <meta name="generator" content={Astro.generator} />
     <title>maxusify.dev</title>
   </head>
-  <body>
+  <body class="bg-gradient">
     <main class="flex flex-col h-screen justify-center items-center">
-      <slot />
+      <div
+        class="flex flex-col bg-black h-full md:max-w-7xl justify-center items-center px-8 border-x border-gray-600"
+      >
+        <slot />
+      </div>
     </main>
   </body>
 </html>
 
 <style is:global>
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Roboto", system-ui, sans-serif;
   }
 
   body {

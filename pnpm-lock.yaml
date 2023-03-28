@@ -5,6 +5,8 @@ specifiers:
   '@astrojs/tailwind': ^3.1.1
   '@fontsource/lato': ^4.5.10
   '@fontsource/righteous': ^4.5.7
+  '@fontsource/roboto': ^4.5.8
+  '@fontsource/roboto-condensed': ^4.5.9
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
   '@typescript-eslint/eslint-plugin': ^5.57.0
@@ -28,6 +30,8 @@ dependencies:
   '@astrojs/tailwind': 3.1.1_xwlinsvcxfu6nyuevlo4g7jv7y
   '@fontsource/lato': 4.5.10
   '@fontsource/righteous': 4.5.7
+  '@fontsource/roboto': 4.5.8
+  '@fontsource/roboto-condensed': 4.5.9
   '@types/react': 18.0.30
   '@types/react-dom': 18.0.11
   astro: 2.1.7
@@ -658,6 +662,14 @@ packages:
 
   /@fontsource/righteous/4.5.7:
     resolution: {integrity: sha512-tIDEC1ygwIGiNPToM1XRRU6YqUdQ8S7NzrYNW1gcE1cN9vU7x7zcgNRy8jALjolgdAWJxM78LnEKDUa7mnOPlw==}
+    dev: false
+
+  /@fontsource/roboto-condensed/4.5.9:
+    resolution: {integrity: sha512-ql4sQq+h8puBVildZ5ssjYf8DWDONYDe3PD3Bu/p1ZW9GnRETRNPPcCTs/q62HIl3QimwwkiKWynn6wZhQaetg==}
+    dev: false
+
+  /@fontsource/roboto/4.5.8:
+    resolution: {integrity: sha512-CnD7zLItIzt86q4Sj3kZUiLcBk1dSk81qcqgMGaZe7SQ1P8hFNxhMl5AZthK1zrDM5m74VVhaOpuMGIL4gagaA==}
     dev: false
 
   /@humanwhocodes/config-array/0.11.8:

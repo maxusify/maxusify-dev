@@ -1,0 +1,32 @@
+---
+export interface Props {
+  title: string;
+}
+
+const items = [
+  { name: "Home", link: "/" },
+  { name: "About", link: "/about" },
+  { name: "Portfolio", link: "/portfolio" },
+  { name: "Contact", link: "/contact" },
+];
+
+const { title } = Astro.props;
+---
+
+<div
+  class="flex flex-row justify-center items-center w-full gap-8 p-5 border-b border-gray-600 font-bold text-xl text-slate-300"
+>
+  {
+    items.map(({ link, name }) => {
+      return (
+        <div
+          class={
+            name.toLowerCase() === title.toLowerCase() ? "text-rose-400" : ""
+          }
+        >
+          <a href={link}>{name}</a>
+        </div>
+      );
+    })
+  }
+</div>

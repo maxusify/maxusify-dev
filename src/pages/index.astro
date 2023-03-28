@@ -1,25 +1,50 @@
 ---
+import Navbar from "@/components/Navbar.astro";
+import AboutSection from "@/components/AboutSection.astro";
 import Layout from "@/layouts/Layout.astro";
+
 import "@fontsource/righteous";
 ---
 
 <Layout>
-  <div class="flex flex-col h-full justify-center items-center">
-    <h1 class="text-8xl font-extrabold italic uppercase text-shadow">
-      maxusify<span class="text-slate-400">.</span>dev
-    </h1>
-    <h3 class="text-4xl font-bold italic uppercase text-slate-400 text-shadow">
-      Michał Pędzik
-    </h3>
-    <div class="flex flex-col justify-center items-center p-4">
-      <h3 class="text-2xl font-thin italic uppercase">Work In Progress</h3>
+  <!-- Navbar -->
+  <Navbar title="home" />
+
+  <!-- Content -->
+  <div class="h-full my-10 flex justify-center items-center">
+    <!-- Hero -->
+    <div class="w-full my-10 grid grid-cols-12 justify-center items-center">
+      <!-- Image -->
+      <div class="hidden lg:flex lg:col-span-5 justify-center">
+        <div class="max-w-sm">
+          <img
+            src="images/photo.jpg"
+            class="rounded-2xl border border-slate-700"
+            alt="picutre"
+          />
+        </div>
+      </div>
+
+      <!-- About -->
+      <section class="col-span-12 lg:col-span-7 p-5">
+        <h1 class="text-5xl font-bold text-slate-50 p-3">
+          I am Michał Pędzik. Living in Poland, creating software.
+        </h1>
+        <AboutSection>
+          My <b>love for coding</b> started all the way in the 2013. At that time
+          I have been making small JavaScript games with <code>jQuery</code> and
+          sites made with WordPress for my Minecraft servers.
+        </AboutSection>
+        <AboutSection>
+          In 2016, I have started to <b>think seriously about my passion</b>. My
+          first encounter with professional web development environment was
+          <code>React</code>. It was pure dark magic back then... But in my eyes
+          you could see bright flame indicating <b>my fascination</b>.
+        </AboutSection>
+        <AboutSection>
+          To this day you can see it. I still <b>love it</b> but even more!
+        </AboutSection>
+      </section>
     </div>
   </div>
 </Layout>
-
-<style>
-  h1,
-  h2 {
-    font-family: "Righteous";
-  }
-</style>
