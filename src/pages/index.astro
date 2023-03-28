@@ -1,6 +1,10 @@
 ---
-import Navbar from "@/components/Navbar.astro";
 import AboutSection from "@/components/AboutSection.astro";
+import Experience from "@/components/Experience.astro";
+import ImportantSection from "@/components/ImportantSection.astro";
+import Navbar from "@/components/Navbar.astro";
+import Skill from "@/components/Skill.astro";
+import Spacer from "@/components/Spacer.astro";
 import Layout from "@/layouts/Layout.astro";
 
 import "@fontsource/righteous";
@@ -11,9 +15,9 @@ import "@fontsource/righteous";
   <Navbar title="home" />
 
   <!-- Content -->
-  <div class="h-full my-10 flex justify-center items-center">
+  <div class="h-full my-10 flex flex-col justify-center items-center">
     <!-- Hero -->
-    <div class="w-full my-10 grid grid-cols-12 justify-center items-center">
+    <section class="w-full my-10 grid grid-cols-12 justify-center items-center">
       <!-- Image -->
       <div class="hidden lg:flex lg:col-span-5 justify-center">
         <div class="max-w-sm">
@@ -26,7 +30,7 @@ import "@fontsource/righteous";
       </div>
 
       <!-- About -->
-      <section class="col-span-12 lg:col-span-7 p-5">
+      <main class="col-span-12 lg:col-span-7 p-5">
         <h1 class="text-5xl font-bold text-slate-50 p-3">
           I am Michał Pędzik. Living in Poland, creating software.
         </h1>
@@ -44,7 +48,100 @@ import "@fontsource/righteous";
         <AboutSection>
           To this day you can see it. I still <b>love it</b> but even more!
         </AboutSection>
-      </section>
-    </div>
+      </main>
+    </section>
+    <ImportantSection name="Experience">
+      <Experience
+        company="Silevis"
+        jobType="Internship"
+        date="2023-02 (1 month)"
+        techstack="Angular, RxJS, PrimeNG, NgRx"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, vel.
+        Laboriosam officiis earum, tenetur molestiae accusamus laudantium
+        voluptates provident, saepe accusantium, similique amet? Itaque, quasi
+        blanditiis. Ipsam tempora sit earum.
+      </Experience>
+      <Experience
+        company="Invesyta"
+        jobType="Internship"
+        date="2022-07 (1 month)"
+        techstack="React, NextJS"
+      >
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. In sint iste
+        aliquam ipsa eveniet praesentium provident quidem, iure dolorem sed
+        officiis ea. Maxime cupiditate voluptates natus. Impedit officiis a
+        ducimus!
+      </Experience>
+      <Experience
+        company="Axel Media"
+        jobType="Internship"
+        date="2018-02 (1 month)"
+        responsibilities="Research, Image manipulation, Maintenance"
+      >
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. In sint iste
+        aliquam ipsa eveniet praesentium provident quidem, iure dolorem sed
+        officiis ea. Maxime cupiditate voluptates natus. Impedit officiis a
+        ducimus!
+      </Experience>
+    </ImportantSection>
+    <Spacer />
+    <ImportantSection name="Skills">
+      <Skill name="Linux" date="since 2013" icon="simple-icons:linux">
+        My main operating system (both server and desktop) since 2020. I have
+        experience with many distributions like: Debian, Ubuntu, Fedora and Arch
+        Linux. Worth saying that earlier I have used Windows since I can
+        remember (2005).
+      </Skill>
+      <Skill name="HTML5/CSS3/JS" date="since 2013" icon="akar-icons:html-fill">
+        Basic skill set for web developer! 🤠
+      </Skill>
+      <Skill name="React" date="since 2016" icon="mdi:react">
+        Easily my most favorite piece of technology since I can remember. I have
+        used it for many personal and university projects. Also made mobile app
+        for univeristy subject with React Native once.
+      </Skill>
+      <Skill name="TypeScript" date="since 2020" icon="mdi:language-typescript">
+        I can't work without it in Node environment yet.
+      </Skill>
+      <Skill name="NodeJS" date="since 2016" icon="mdi:nodejs">
+        Same as with HTML5/CSS3/JS!
+      </Skill>
+      <Skill name="Angular" date="since 2018" icon="mdi:angular">
+        Since I can remember... I was avoiding it. After Silevis internship I
+        can say that it can be quite nice. Especially when working with teams!
+      </Skill>
+      <Skill name="NextJS Framework" date="since 2019" icon="file-icons:nextjs">
+        Basically, it is core of all my React projects.
+      </Skill>
+      <Skill name="Svelte" date="since 2020" icon="file-icons:svelte">
+        Quite impressive thing to work with! If React would not exist, Svelte
+        would be on its place.
+      </Skill>
+      <Skill name="Rust" date="since 2021" icon="mdi:language-rust">
+        I am true Rustacean. Felt in love at first sight. Made some great
+        projects with it and I hope I will make more.
+      </Skill>
+      <Skill name="Astro" date="since 2022" icon="simple-icons:astro">
+        Great, great tool for making blog like sites. This site is also powered
+        by Astro!
+      </Skill>
+      <Skill name="Java" date="since 2016" icon="mdi:language-java">
+        Learnt it in Middle School and used it for some Minecraft projects.
+      </Skill>
+      <Skill name="C/C++" date="since 2019" icon="simple-icons:cplusplus">
+        Learnt it in University. Used it for OpenGL and SDL2 projects.
+      </Skill>
+      <Skill name="PHP" date="since 2016" icon="mdi:language-php">
+        Great language with some quirky elements.
+      </Skill>
+    </ImportantSection>
   </div>
 </Layout>
+
+<style>
+  [astro-icon] {
+    width: auto;
+    height: 2rem;
+  }
+</style>

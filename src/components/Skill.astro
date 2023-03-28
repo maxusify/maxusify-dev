@@ -1,0 +1,30 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  name: string;
+  date: string;
+  icon?: string;
+}
+
+const { name, date, icon } = Astro.props;
+---
+
+<div>
+  <div class="flex items-center gap-2 py-2 border-b border-slate-700">
+    <Icon name={!icon ? "mdi:code-tags" : `${icon}`} />
+    <span class="font-bold text-lg">{name}</span>
+    <span>•</span>
+    <span class="text-slate-400">{date}</span>
+  </div>
+  <p class="pt-2">
+    <slot />
+  </p>
+</div>
+
+<style>
+  [astro-icon] {
+    width: auto;
+    height: 2rem;
+  }
+</style>

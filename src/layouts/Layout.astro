@@ -12,9 +12,9 @@ import "@fontsource/roboto-condensed";
     <title>maxusify.dev</title>
   </head>
   <body class="bg-gradient">
-    <main class="flex flex-col h-screen justify-center items-center">
+    <main class="flex flex-col justify-center items-center">
       <div
-        class="flex flex-col bg-black h-full md:max-w-7xl justify-center items-center px-8 border-x border-gray-600"
+        class="flex flex-col bg-black max-h-full md:max-w-7xl justify-center items-center px-8 border-x border-gray-600 overflow-y-auto"
       >
         <slot />
       </div>
@@ -28,6 +28,59 @@ import "@fontsource/roboto-condensed";
   }
 
   body {
-    @apply bg-slate-900 text-slate-200;
+    @apply bg-black text-slate-200;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(
+      358deg,
+      #020617,
+      #020617,
+      #0f172a,
+      #4c0519,
+      #9f1239,
+      #0f172a
+    );
+    background-size: 1200% 1200%;
+
+    -webkit-animation: bg-gradient 12s ease infinite;
+    -moz-animation: bg-gradient 12s ease infinite;
+    animation: bg-gradient 12s ease infinite;
+  }
+
+  @-webkit-keyframes bg-gradient {
+    0% {
+      background-position: 0% 51%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 51%;
+    }
+  }
+
+  @-moz-keyframes bg-gradient {
+    0% {
+      background-position: 0% 51%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 51%;
+    }
+  }
+
+  @keyframes bg-gradient {
+    0% {
+      background-position: 0% 51%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 51%;
+    }
   }
 </style>
