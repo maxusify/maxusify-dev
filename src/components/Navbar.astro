@@ -1,20 +1,23 @@
 ---
 export interface Props {
   title: string;
+  border?: boolean;
 }
 
 const items = [
   { name: "Home", link: "/" },
-  { name: "About", link: "/#" },
+  { name: "About", link: "/about" },
   { name: "Portfolio", link: "/#" },
   { name: "Contact", link: "/#" },
 ];
 
-const { title } = Astro.props;
+const { title, border = true } = Astro.props;
 ---
 
 <div
-  class="flex flex-row justify-center items-center w-full gap-8 p-5 border-b border-gray-600 font-bold text-xl text-slate-300"
+  class={`flex flex-row justify-center items-center w-full gap-8 p-5 ${
+    border ? "border-b border-gray-600" : ""
+  } font-bold text-xl text-slate-300`}
 >
   {
     items.map(({ link, name }) => {
