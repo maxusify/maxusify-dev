@@ -1,0 +1,94 @@
+---
+import "@fontsource/roboto-condensed";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Michał Pędzik" />
+    <meta
+      name="description"
+      content="My personal website. Come, take a look!"
+    />
+    <meta
+      name="keywords"
+      content="web,dev,developer,maxusify,react,linux,typescript,javascript"
+    />
+    <meta name="og:title" content="maxusify.dev" />
+    <meta
+      name="og:description"
+      content="My personal website. Come, take a look!"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>maxusify.dev</title>
+  </head>
+  <body class="bg-gradient">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: "Roboto", system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-black text-slate-200;
+  }
+
+  .bg-gradient {
+    background: linear-gradient(
+      358deg,
+      #020617,
+      #020617,
+      #0f172a,
+      #4c0519,
+      #9f1239,
+      #0f172a
+    );
+    background-size: 1200% 1200%;
+
+    -webkit-animation: bg-gradient 12s ease infinite;
+    -moz-animation: bg-gradient 12s ease infinite;
+    animation: bg-gradient 12s ease infinite;
+  }
+
+  @-webkit-keyframes bg-gradient {
+    0% {
+      background-position: 0% 51%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 51%;
+    }
+  }
+
+  @-moz-keyframes bg-gradient {
+    0% {
+      background-position: 0% 51%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 51%;
+    }
+  }
+
+  @keyframes bg-gradient {
+    0% {
+      background-position: 0% 51%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 51%;
+    }
+  }
+</style>
