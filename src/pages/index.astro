@@ -4,6 +4,7 @@ import Experience from "@/components/Experience.astro";
 import ImportantSection from "@/components/ImportantSection.astro";
 import Navbar from "@/components/Navbar.astro";
 import Skill from "@/components/Skill.astro";
+import SkillCategory from "@/components/SkillCategory.astro";
 import Spacer from "@/components/Spacer.astro";
 import Layout from "@/layouts/Layout.astro";
 
@@ -87,53 +88,114 @@ import "@fontsource/righteous";
     </ImportantSection>
     <Spacer />
     <ImportantSection name="Skills">
-      <Skill name="Linux" date="since 2013" icon="simple-icons:linux">
-        My main operating system (both server and desktop) since 2020. I have
-        experience with many distributions like: Debian, Ubuntu, Fedora and Arch
-        Linux. Worth saying that earlier I have used Windows since I can
-        remember (2005).
-      </Skill>
-      <Skill name="HTML5/CSS3/JS" date="since 2013" icon="akar-icons:html-fill">
-        Basic skill set for web developer! 🤠
+      <SkillCategory name="Web Development" desc="Frontend vs. Backend wars" />
+      <Skill
+        name="HTML5 | CSS3 | JavaScript"
+        date="since 2013"
+        icon="akar-icons:html-fill"
+      >
+        Basic skill set for every webdev!
       </Skill>
       <Skill name="React" date="since 2016" icon="mdi:react">
         Easily my most favorite piece of technology since I can remember. I have
         used it for many personal and university projects. Also made mobile app
         for univeristy subject with React Native once.
       </Skill>
-      <Skill name="TypeScript" date="since 2020" icon="mdi:language-typescript">
-        I can't work without it in Node environment yet.
-      </Skill>
-      <Skill name="NodeJS" date="since 2016" icon="mdi:nodejs">
-        Same as with HTML5/CSS3/JS!
-      </Skill>
       <Skill name="Angular" date="since 2018" icon="mdi:angular">
         Since I can remember... I was avoiding it. After Silevis internship I
         can say that it can be quite nice. Especially when working with teams!
-      </Skill>
-      <Skill name="NextJS Framework" date="since 2019" icon="file-icons:nextjs">
-        Basically, it is core of all my React projects.
       </Skill>
       <Skill name="Svelte" date="since 2020" icon="file-icons:svelte">
         Quite impressive thing to work with! If React would not exist, Svelte
         would be on its place.
       </Skill>
-      <Skill name="Rust" date="since 2021" icon="mdi:language-rust">
-        I am true Rustacean. Felt in love at first sight. Made some great
-        projects with it and I hope I will make more.
+      <Skill name="NextJS Framework" date="since 2019" icon="file-icons:nextjs">
+        Basically, it is core of all my React projects.
       </Skill>
       <Skill name="Astro" date="since 2022" icon="simple-icons:astro">
         Great, great tool for making blog like sites. This site is also powered
         by Astro!
       </Skill>
+      <Skill name="TypeScript" date="since 2020" icon="mdi:language-typescript">
+        I can't work without it in Node environment.
+      </Skill>
+      <Skill name="NodeJS" date="since 2016" icon="mdi:nodejs">
+        Same as with HTML5/CSS3/JS!
+      </Skill>
+      <SkillCategory
+        name="Operating Systems and Environments"
+        desc="I use arch btw"
+      />
+      <Skill name="Linux" date="since 2013" icon="simple-icons:linux">
+        My main operating system (both server and desktop) since 2020. I have
+        experience with many distributions like: Debian, Ubuntu, Fedora and Arch
+        Linux.
+      </Skill>
+      <Skill name="Windows" date="since 2005" icon="ion:logo-windows">
+        Good old Windows. In all these years I have gained deep knowledge about
+        Windows guts. KVM Virtualization is the way I use it these days.
+      </Skill>
+      <Skill name="KVM" date="since 2021" icon="simple-icons:virtualbox">
+        KVM Virtualization is the thing that spins up every data center! Really
+        useful thing for personal projects too.
+      </Skill>
+      <Skill name="Docker" date="since 2019" icon="mdi:docker">
+        Works on my machine! 🤡
+      </Skill>
+      <SkillCategory
+        name="Programming Languages"
+        desc="Because one language is not enough!"
+      />
+      <Skill name="Python" date="since 2015" icon="mdi:language-python">
+        Who does not love Python?
+      </Skill>
+      <Skill name="Rust" date="since 2019" icon="mdi:language-rust">
+        I am true Rustacean. Felt in love at first sight. Made some great
+        projects like Rocket/Axum REST APIs, Bevy Games and I hope I will make
+        more in the future.
+      </Skill>
       <Skill name="Java" date="since 2016" icon="mdi:language-java">
         Learnt it in Middle School and used it for some Minecraft projects.
+      </Skill>
+      <Skill name="C#" date="since 2020" icon="simple-icons:csharp">
+        Learnt it just out of curiosity. Used it for some Unity and Godot
+        projects.
       </Skill>
       <Skill name="C/C++" date="since 2019" icon="simple-icons:cplusplus">
         Learnt it in University. Used it for OpenGL and SDL2 projects.
       </Skill>
       <Skill name="PHP" date="since 2016" icon="mdi:language-php">
         Great language with some quirky elements.
+      </Skill>
+      <SkillCategory
+        name="Other"
+        desc="Not only the techstack makes you a great developer"
+      />
+      <Skill name="English Language">
+        Learning it since I was a small child. Currently I am at B2 level.
+      </Skill>
+      <Skill name="Version Control Systems">
+        Man, how to live without git? I can not imagine. I have experience with
+        GitHub, GitLab and Azure DevOps platforms.
+      </Skill>
+      <Skill name="Teamwork">
+        I love working with other people! Taking advices, learning from others,
+        helping those who need help - these are the most important things for
+        me.
+      </Skill>
+      <Skill name="Work Organization">
+        Trello, Scrum, Kanban, Excalidraw, Notes. Good organization is the key
+        for great work flow.
+      </Skill>
+    </ImportantSection>
+    <Spacer />
+    <ImportantSection name="Certificates">
+      <Skill name="Responsive Web Design">
+        Verify this certification at <a
+          class="font-bold text-rose-400"
+          href="https://www.freecodecamp.org/certification/prinzsabishi/responsive-web-design"
+          >freeCodeCamp</a
+        >.
       </Skill>
     </ImportantSection>
   </div>
