@@ -11,24 +11,40 @@ const { name, date, icon } = Astro.props
 ---
 
 <div>
-  <div class='flex items-center gap-2 py-2 border-b border-slate-700'>
-    <Icon name={!icon ? 'mdi:code-tags' : `${icon}`} />
-    <span class='font-bold text-lg'>{name}</span>
+  <div class='skill'>
+    <Icon name={icon || 'mdi:code-tags'} />
+    <span class='skill-name'>{name}</span>
     {
       date && (
         <>
           <span>•</span>
-          <span class='truncate text-slate-400'>{date}</span>
+          <span class='text-date'>{date}</span>
         </>
       )
     }
   </div>
-  <p class='pt-2'>
+  <p class='skill-desc'>
     <slot />
   </p>
 </div>
 
 <style>
+  .skill {
+    @apply flex items-center gap-2 border-b border-slate-700 py-2;
+  }
+
+  .skill-name {
+    @apply text-lg font-bold;
+  }
+
+  .skill-date {
+    @apply truncate text-slate-400;
+  }
+
+  .skill-desc {
+    @apply pt-2;
+  }
+
   [astro-icon] {
     width: auto;
     height: 2rem;

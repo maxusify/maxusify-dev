@@ -6,15 +6,29 @@ export interface Props {
 const { name } = Astro.props
 ---
 
-<section
-  class='w-full col-span-12 grid grid-cols-4 p-5 lg:border-l border-slate-700'
->
-  <div class='col-span-4 px-5 lg:col-span-1 h-full'>
-    <h1 class='text-4xl text-rose-400 font-bold'>{name}</h1>
+<section>
+  <div class='section-title-area'>
+    <h1 class='section-title'>{name}</h1>
   </div>
-  <div
-    class='col-span-4 lg:col-span-3 w-full flex flex-col gap-5 px-5 lg:border-l border-slate-700'
-  >
+  <div class='section-content-area'>
     <slot />
   </div>
 </section>
+
+<style>
+  section {
+    @apply col-span-12 grid w-full grid-cols-4 border-slate-700 p-5 lg:border-l;
+  }
+
+  .section-title-area {
+    @apply col-span-4 h-full px-5 lg:col-span-1;
+  }
+
+  .section-title {
+    @apply text-4xl font-bold text-rose-400;
+  }
+
+  .section-content-area {
+    @apply col-span-4 flex w-full flex-col gap-5 border-slate-700 px-5 lg:col-span-3 lg:border-l;
+  }
+</style>
