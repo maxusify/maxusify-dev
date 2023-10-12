@@ -1,29 +1,29 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from 'astro-icon'
 
 export interface Props {
-  company: string;
-  jobType: "Intern" | "Junior" | "Mid" | "Regular" | "Senior" | "Expert";
-  date: string;
-  techstack?: string;
-  responsibilities?: string;
-  icon?: string;
+  company: string
+  jobType: 'Intern' | 'Junior' | 'Mid' | 'Regular' | 'Senior' | 'Expert'
+  date: string
+  techstack?: string
+  responsibilities?: string
+  icon?: string
 }
 
 const { company, jobType, date, techstack, responsibilities, icon } =
-  Astro.props;
+  Astro.props
 ---
 
 <div>
-  <div class="flex items-center gap-2 py-2 border-b border-slate-700">
-    <Icon name={!icon ? "mdi:web" : `${icon}`} />
-    <span class="font-bold sm:text-lg">{company}</span>
+  <div class='flex items-center gap-2 py-2 border-b border-slate-700'>
+    <Icon name={!icon ? 'mdi:web' : `${icon}`} />
+    <span class='font-bold sm:text-lg'>{company}</span>
     <span>•</span>
-    <span class="text-slate-400">{jobType}</span>
+    <span class='text-slate-400'>{jobType}</span>
     <span>•</span>
-    <span class="text-slate-400 truncate">{date}</span>
+    <span class='text-slate-400 truncate'>{date}</span>
   </div>
-  <p class="py-2">
+  <p class='py-2'>
     {
       techstack && (
         <code>
@@ -39,7 +39,7 @@ const { company, jobType, date, techstack, responsibilities, icon } =
       )
     }
   </p>
-  <p class="pt-2">
+  <p class='pt-2'>
     <slot />
   </p>
 </div>

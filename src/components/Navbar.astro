@@ -1,22 +1,22 @@
 ---
 export interface Props {
-  title: string;
-  border?: boolean;
+  title: string
+  border?: boolean
 }
 
 const items = [
-  { name: "Home", link: "/" },
-  { name: "About Me", link: "/about" },
+  { name: 'Home', link: '/' },
+  { name: 'About Me', link: '/about' }
   // { name: "Portfolio", link: "/#" },
   // { name: "Contact", link: "/#" },
-];
+]
 
-const { title, border = true } = Astro.props;
+const { title, border = true } = Astro.props
 ---
 
 <div
   class={`flex flex-row justify-center items-center w-full gap-8 p-5 ${
-    border ? "border-b border-gray-600" : ""
+    border ? 'border-b border-gray-600' : ''
   } font-bold text-xl text-slate-300`}
 >
   {
@@ -24,12 +24,12 @@ const { title, border = true } = Astro.props;
       return (
         <div
           class={
-            name.toLowerCase() === title.toLowerCase() ? "text-rose-400" : ""
+            name.toLowerCase() === title.toLowerCase() ? 'text-rose-400' : ''
           }
         >
           <a href={link}>{name}</a>
         </div>
-      );
+      )
     })
   }
 </div>
