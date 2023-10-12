@@ -1,0 +1,36 @@
+---
+const siteData = {
+  title: "maxusify.dev",
+  author: "Michał Pędzik",
+  description: "My personal site/blog/portfolio/place in the Internet.",
+  keywords: [
+    "web",
+    "dev",
+    "developer",
+    "maxusify",
+    "react",
+    "linux",
+    "typescript",
+    "javascript",
+  ],
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content={siteData.author} />
+    <meta name="description" content={siteData.description} />
+    <meta name="keywords" content={siteData.keywords.join(",")} />
+    <meta name="og:title" content={siteData.title} />
+    <meta name="og:description" content={siteData.description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{siteData.title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
