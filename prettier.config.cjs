@@ -1,5 +1,7 @@
 /** @type {import("prettier").Config} */
 const config = {
+  ...require("prettier-config-standard"),
+  pluginSearchDirs: [__dirname],
   plugins: [
     require.resolve("prettier-plugin-tailwindcss"),
     require.resolve("prettier-plugin-astro"),
