@@ -1,5 +1,7 @@
 ---
 import { siteData } from '@/constants/site-data'
+
+import '@fontsource/gabarito'
 ---
 
 <!DOCTYPE html>
@@ -20,3 +22,25 @@ import { siteData } from '@/constants/site-data'
     <slot />
   </body>
 </html>
+
+<style is:global>
+  /* Global document style */
+  html,
+  body {
+    @apply m-0 h-full w-full;
+  }
+
+  /* Global body style */
+  body {
+    @apply flex min-h-full flex-col;
+  }
+
+  /* Global body background style */
+  body {
+    @apply bg-slate-950 text-slate-200;
+  }
+
+  body {
+    font-family: 'Gabarito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+</style>

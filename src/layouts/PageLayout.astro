@@ -1,0 +1,26 @@
+---
+import Navbar from '@/components/Navbar.astro'
+import RootLayout from '@/layouts/RootLayout.astro'
+import Footer from '@/components/Footer.astro'
+---
+
+<RootLayout>
+  <header>
+    <Navbar />
+  </header>
+  <main>
+    <div class='wrapper'><slot /></div>
+  </main>
+  <Footer />
+</RootLayout>
+
+<style>
+  /* Page container style */
+  main {
+    @apply flex h-full w-full flex-col items-center;
+  }
+
+  .wrapper {
+    @apply max-w-7xl;
+  }
+</style>
