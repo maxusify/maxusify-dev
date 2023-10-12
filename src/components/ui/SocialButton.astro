@@ -1,0 +1,29 @@
+---
+import { Icon } from 'astro-icon'
+export interface Props {
+  href: string
+  icon: string
+  bgColor: string
+  textColor: string
+}
+
+const { href, icon, bgColor, textColor } = Astro.props
+
+const propsClasses = `${bgColor} ${textColor}`
+---
+
+<a href={href}>
+  <button class={`flex items-center gap-2 p-3 rounded-2xl ${propsClasses}`}>
+    <Icon name={icon} />
+    <span class='text-xl font-bold'>
+      <slot />
+    </span>
+  </button>
+</a>
+
+<style>
+  [astro-icon] {
+    width: auto;
+    height: 2rem;
+  }
+</style>
