@@ -5,16 +5,13 @@ import ImportantSection from '@/components/ImportantSection.astro'
 import Navbar from '@/components/Navbar.astro'
 import Skill from '@/components/Skill.astro'
 import SkillCategory from '@/components/SkillCategory.astro'
-import Spacer from '@/components/Spacer.astro'
-import Layout from '@/layouts/ContentPageLayout.astro'
+import Spacer from '@/components/ui/Spacer.astro'
+import Layout from '@/layouts/PageLayout.astro'
 ---
 
 <Layout>
-  <!-- Navbar -->
-  <Navbar title='about' />
-
   <!-- Content -->
-  <div class='h-full my-10 flex flex-col justify-center items-center'>
+  <div class='my-10 flex flex-col justify-center items-center'>
     <!-- Hero -->
     <section
       class='w-full lg:my-10 grid grid-cols-12 justify-center items-center'
@@ -56,19 +53,25 @@ import Layout from '@/layouts/ContentPageLayout.astro'
         company='Silevis'
         jobType='Intern'
         date='2023-02'
-        techstack='Angular, RxJS, PrimeNG, NgRx'
+        techstack={['Angular', 'RxJS', 'PrimeNG', 'NgRx']}
       />
       <Experience
         company='Invesyta'
         jobType='Intern'
         date='2022-07'
-        techstack='React, NextJS'
+        techstack={['React', 'NextJS']}
       />
       <Experience
         company='Axel Media'
         jobType='Intern'
         date='2018-02'
-        responsibilities='Research, Image manipulation, Maintenance'
+        responsibilities={['Research', 'Image manipulation', 'Maintenance']}
+      />
+      <Experience
+        company='Axel Media'
+        jobType='Intern'
+        date='2018-02'
+        responsibilities={['Research', 'Image manipulation', 'Maintenance']}
       />
     </ImportantSection>
     <Spacer />
