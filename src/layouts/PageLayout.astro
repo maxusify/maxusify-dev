@@ -5,22 +5,28 @@ import Footer from '@/components/Footer.astro'
 ---
 
 <RootLayout>
-  <header>
-    <Navbar />
-  </header>
-  <main>
-    <div class='wrapper'><slot /></div>
-  </main>
-  <Footer />
+  <div class='wrapper'>
+    <header>
+      <Navbar />
+    </header>
+    <main>
+      <div class='content-wrapper'><slot /></div>
+    </main>
+    <Footer />
+  </div>
 </RootLayout>
 
 <style>
-  /* Page container style */
-  main {
-    @apply flex h-full w-full flex-col items-center;
+  .wrapper {
+    @apply flex h-full flex-col;
   }
 
-  .wrapper {
+  /* Page container style */
+  main {
+    @apply flex w-full flex-1 flex-col items-center;
+  }
+
+  .content-wrapper {
     @apply max-w-7xl;
   }
 </style>

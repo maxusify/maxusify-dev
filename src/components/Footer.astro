@@ -1,14 +1,13 @@
+---
+import NameTag from './ui/NameTag.astro'
+---
+
 <footer>
   <p>Copyright &copy; 2023</p>
-  <p>Made by <a href='https://github.com/maxusify'>@maxusify</a></p>
+  <p>Made by <NameTag href='https://github.com/maxusify' name='maxusify' /></p>
 </footer>
 
 <style>
-  /* Position footer */
-  footer {
-    @apply relative bottom-0 left-0;
-  }
-
   /* Footer flex style */
   footer {
     @apply flex w-full flex-col items-center justify-center;
