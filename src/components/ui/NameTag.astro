@@ -1,0 +1,18 @@
+---
+import {} from 'astro'
+
+export interface Props {
+  name: string
+  href?: string
+}
+
+const { name, href } = Astro.props
+---
+
+<a class='name' href={href || '#'}>@{name}</a>
+
+<style>
+  .name {
+    @apply font-bold text-rose-500;
+  }
+</style>
