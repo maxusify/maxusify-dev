@@ -1,0 +1,68 @@
+---
+export interface Props {
+  title: string
+  date: string
+  image?: string
+  category?: string
+  tags?: string[]
+}
+
+const { title, date, image, category, tags } = Astro.props
+
+const formatDate = (date: string) => {
+  const d = new Date(date)
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
+}
+---
+
+<div class='wrapper'>
+  <div class='post-image'>
+    <img src={image} alt={title} />
+  </div>
+  <div class='post-title'>
+    <h1>{title}</h1>
+    <h2>
+      {formatDate(date)}{category && ` - ${category}`}
+      {tags && ` - ${tags.join(' ')}`}
+    </h2>
+  </div>
+</div>
+
+<style>
+  /* Wrapper style */
+  .wrapper {
+    @apply flex w-full flex-col justify-center;
+  }
+
+  /* Post border style */
+  .wrapper {
+    @apply overflow-hidden rounded-md border;
+  }
+
+  /* Post image style */
+  .post-image,
+  .post-image > img {
+    @apply w-full;
+  }
+
+  /* Post title style */
+  .post-title {
+    @apply p-3;
+  }
+
+  .post-title > h1 {
+    @apply truncate text-xl font-bold text-rose-500;
+  }
+
+  .post-title > h2 {
+    @apply text-sm font-thin text-slate-500;
+  }
+
+  .post-title > h3 {
+    @apply text-slate-400;
+  }
+</style>
