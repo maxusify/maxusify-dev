@@ -1,7 +1,53 @@
 ---
+import NameTag from '@/components/ui/NameTag.astro'
 import PageLayout from '@/layouts/PageLayout.astro'
+
+import { Button } from '@/components/ui/button'
 ---
 
 <PageLayout>
-  <div>siema</div>
+  <div class='wrapper'>
+    <div class='hero'>
+      <h1>Welcome to my Digital Haven.</h1>
+      <h3>
+        I am <NameTag name='Michał Pędzik' atSymbol={false} />, a
+        <u><code>web</code>/<code>game</code> developer</u> from Poland.
+      </h3>
+      <div class='hero-buttons'>
+        <Button>My Projects</Button>
+        <Button>My Blog</Button>
+        <Button>Contact with Me</Button>
+      </div>
+    </div>
+  </div>
 </PageLayout>
+
+<style>
+  .wrapper {
+    @apply flex w-full flex-col items-center justify-center;
+  }
+
+  .hero {
+    @apply mt-10 flex w-full flex-col items-center justify-center py-16;
+  }
+
+  .hero > * {
+    @apply text-center;
+  }
+
+  .hero > h1 {
+    @apply p-5 text-6xl font-bold text-white;
+  }
+
+  .hero > h3 {
+    @apply text-xl text-slate-400;
+  }
+
+  .hero-buttons {
+    @apply space-x-3 p-5;
+  }
+
+  .hero-buttons > Button {
+    @apply bg-rose-400;
+  }
+</style>

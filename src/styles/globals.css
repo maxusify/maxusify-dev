@@ -78,7 +78,7 @@
   /* Global document style */
   html,
   body {
-    @apply m-0 h-full w-full;
+    @apply m-0 h-full w-full overflow-x-hidden;
   }
 
   /* Global body style */
