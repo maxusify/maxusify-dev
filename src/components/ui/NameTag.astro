@@ -4,12 +4,13 @@ import {} from 'astro'
 export interface Props {
   name: string
   href?: string
+  atSymbol?: boolean
 }
 
-const { name, href } = Astro.props
+const { name, href, atSymbol = true } = Astro.props
 ---
 
-<a class='name' href={href || '#'}>@{name}</a>
+<a class='name' href={href || '#'}>{atSymbol && '@'}{name}</a>
 
 <style>
   .name {
