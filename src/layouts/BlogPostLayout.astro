@@ -1,0 +1,65 @@
+---
+import PageLayout from '@/layouts/PageLayout.astro'
+import { formatDate } from '@/lib/formatDate'
+
+const { frontmatter } = Astro.props
+---
+
+<PageLayout title={frontmatter.title}>
+  <div class='wrapper'>
+    <div class='post-image'>
+      <img
+        src={frontmatter.image?.url}
+        alt={frontmatter.image?.alt || frontmatter.title}
+      />
+    </div>
+    <div class='post-title'>
+      <h1>{frontmatter.title}</h1>
+      <h2>
+        {formatDate(frontmatter.pubDate)}
+        {frontmatter.tags && ` - ${frontmatter.tags.join(' ')}`}
+      </h2>
+    </div>
+    <div class='post-content'>
+      <slot />
+    </div>
+  </div>
+</PageLayout>
+
+<style>
+  /* Wrapper style */
+  .wrapper {
+    @apply mt-5 flex w-full flex-col justify-center;
+  }
+
+  /* Post image style */
+  .post-image {
+    @apply mb-5 w-full;
+  }
+
+  .post-image > img {
+    @apply w-full rounded-md;
+  }
+
+  /* Post title style */
+  .post-title,
+  .post-content {
+    @apply p-3;
+  }
+
+  .post-title > h1 {
+    @apply text-4xl font-bold text-rose-600;
+  }
+
+  .post-title > h2 {
+    @apply text-xl font-thin italic text-slate-400;
+  }
+
+  .post-content {
+    @apply text-xl text-slate-300;
+  }
+
+  .post-content > slot > h1 {
+    @apply text-3xl font-bold text-rose-600;
+  }
+</style>

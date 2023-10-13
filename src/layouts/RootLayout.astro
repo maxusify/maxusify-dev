@@ -4,6 +4,12 @@ import { siteData } from '@/constants/site-data'
 
 import '@/styles/globals.css'
 import '@fontsource/gabarito'
+
+export interface Props {
+  title?: string
+}
+
+const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -18,7 +24,7 @@ import '@fontsource/gabarito'
     <meta name='og:description' content={siteData.description} />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
-    <title>{siteData.title}</title>
+    <title>{`${title && `${title} | `}${siteData.title}`}</title>
     <ThemeProvider />
   </head>
   <body>

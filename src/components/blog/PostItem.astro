@@ -1,36 +1,35 @@
 ---
+import { formatDate } from '@/lib/formatDate'
+
 export interface Props {
   title: string
-  date: string
-  image?: string
+  pubDate: string
   category?: string
+  image?: {
+    url: string
+    alt: string
+  }
   tags?: string[]
+  url: string
 }
 
-const { title, date, image, category, tags } = Astro.props
-
-const formatDate = (date: string) => {
-  const d = new Date(date)
-  return d.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+const { title, pubDate: date, image, category, tags, url } = Astro.props
 ---
 
-<div class='wrapper'>
-  <div class='post-image'>
-    <img src={image} alt={title} />
+<a href={url}>
+  <div class='wrapper'>
+    <div class='post-image'>
+      <img src={image?.url} alt={image?.alt || title} />
+    </div>
+    <div class='post-title'>
+      <h1>{title}</h1>
+      <h2>
+        {formatDate(date)}{category && ` - ${category}`}
+        {tags && ` - ${tags.join(' ')}`}
+      </h2>
+    </div>
   </div>
-  <div class='post-title'>
-    <h1>{title}</h1>
-    <h2>
-      {formatDate(date)}{category && ` - ${category}`}
-      {tags && ` - ${tags.join(' ')}`}
-    </h2>
-  </div>
-</div>
+</a>
 
 <style>
   /* Wrapper style */

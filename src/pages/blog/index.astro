@@ -1,0 +1,59 @@
+---
+import PostGrid from '@/components/blog/PostGrid.astro'
+import PostItem from '@/components/blog/PostItem.astro'
+import PageLayout from '@/layouts/PageLayout.astro'
+
+const allPosts = await Astro.glob('./posts/*.{md,mdx}')
+const sortedPosts = allPosts.sort((a, b) => {
+  const aDate = Number(new Date(a.frontmatter.pubDate))
+  const bDate = Number(new Date(b.frontmatter.pubDate))
+
+  return bDate - aDate
+})
+
+const newestPost = sortedPosts[0]
+const olderPosts = sortedPosts.slice(1)
+---
+
+<PageLayout title='Blog'>
+  <div class='wrapper'>
+    <section class='blog'>
+      <div class='posts'>
+        <section class='newest-post'>
+          <PostItem url={newestPost.url} {...newestPost.frontmatter} />
+        </section>
+        <section class='older-posts'>
+          <PostGrid>
+            {
+              olderPosts.map((post) => (
+                <PostItem url={post.url} {...post.frontmatter} />
+              ))
+            }
+          </PostGrid>
+        </section>
+      </div>
+    </section>
+  </div>
+</PageLayout>
+
+<style>
+  .wrapper {
+    @apply flex w-full flex-col;
+  }
+
+  .blog {
+    @apply flex w-full;
+  }
+
+  .posts {
+    @apply flex w-full flex-col items-center px-[150px];
+  }
+
+  .newest-post {
+    @apply mb-10 w-full;
+  }
+
+  .older-posts {
+    @apply w-full;
+  }
+</style>
