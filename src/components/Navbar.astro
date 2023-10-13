@@ -16,25 +16,43 @@ const isActive = (link: string) => {
 }
 ---
 
-<div class:list={['nav-container', { 'nav-active-border': border }]}>
-  {
-    items.map((item) => {
-      if (item.enabled === false) {
-        return null
-      }
+<nav>
+  <div class='brand'>
+    <a href='/'>maxusify<span class='text-slate-100'>.</span>dev</a>
+  </div>
+  <div class='links'>
+    <div class:list={['nav-container', { 'nav-active-border': border }]}>
+      {
+        items.map((item) => {
+          if (item.enabled === false) {
+            return null
+          }
 
-      return (
-        <div
-          class:list={['nav-item', { 'nav-active-item': isActive(item.link) }]}
-        >
-          <a href={item.link}>{item.name}</a>
-        </div>
-      )
-    })
-  }
-</div>
+          return (
+            <div
+              class:list={[
+                'nav-item',
+                { 'nav-active-item': isActive(item.link) }
+              ]}
+            >
+              <a href={item.link}>{item.name}</a>
+            </div>
+          )
+        })
+      }
+    </div>
+  </div>
+</nav>
 
 <style>
+  nav {
+    @apply flex w-full items-center justify-between px-10 py-3;
+  }
+
+  .brand > a {
+    @apply text-xl font-bold text-rose-400;
+  }
+
   /* Navbar container style */
   .nav-container {
     @apply flex w-full flex-row items-center justify-center gap-8 p-5;
@@ -42,16 +60,16 @@ const isActive = (link: string) => {
 
   /* Navbar item regular style */
   .nav-item {
-    @apply text-xl font-bold text-slate-300;
+    @apply text-xl font-thin text-slate-300;
   }
 
   /* Navbar item active style */
   .nav-active-item {
-    @apply text-rose-400;
+    @apply font-bold text-rose-400;
   }
 
   /* Navbar item border style */
   .nav-active-border {
-    @apply border-b border-slate-400;
+    @apply border-b border-slate-500;
   }
 </style>
