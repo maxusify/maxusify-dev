@@ -1,6 +1,8 @@
 ---
+import ThemeProvider from '@/components/ThemeProvider.astro'
 import { siteData } from '@/constants/site-data'
 
+import '@/styles/globals.css'
 import '@fontsource/gabarito'
 ---
 
@@ -17,31 +19,9 @@ import '@fontsource/gabarito'
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{siteData.title}</title>
+    <ThemeProvider />
   </head>
   <body>
     <slot />
   </body>
 </html>
-
-<style is:global>
-  /* Global document style */
-  html,
-  body {
-    @apply m-0 h-full w-full;
-  }
-
-  /* Global body style */
-  body {
-    @apply flex min-h-screen flex-col;
-  }
-
-  /* Global body background style */
-  body {
-    @apply bg-slate-950 text-slate-200;
-  }
-
-  /* Global font style */
-  body {
-    font-family: 'Gabarito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-</style>
