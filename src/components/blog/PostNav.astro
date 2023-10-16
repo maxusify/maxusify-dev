@@ -1,0 +1,39 @@
+---
+import { buttonVariants } from '../ui/button'
+import PostTag from './PostTag.astro'
+
+export interface Props {
+  tags?: string[]
+}
+
+const { tags } = Astro.props
+---
+
+<div class='wrapper'>
+  <div class='back-button'>
+    <a href='/blog' class={buttonVariants({ variant: 'secondary' })}>
+      Go back
+    </a>
+  </div>
+  <div class='post-tags'>
+    Tags: {tags?.map((tag: string) => <PostTag name={tag} />)}
+  </div>
+</div>
+
+<style>
+  .wrapper {
+    @apply mb-5 flex w-full items-center justify-between p-3;
+  }
+
+  .wrapper {
+    @apply rounded-md;
+  }
+
+  .wrapper {
+    @apply bg-gray-900;
+  }
+
+  .post-tags {
+    @apply ml-2 flex flex-wrap gap-1;
+  }
+</style>

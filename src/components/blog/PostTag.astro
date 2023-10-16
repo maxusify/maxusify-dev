@@ -1,0 +1,22 @@
+---
+export interface Props {
+  name?: string
+  hashSymbol?: boolean
+}
+
+const { hashSymbol = true, name } = Astro.props
+---
+
+<span class='wrapper'>
+  {hashSymbol && '#'}{name ? name : <slot />}
+</span>
+
+<style>
+  .wrapper {
+    @apply flex items-center;
+  }
+
+  .wrapper {
+    @apply rounded-md bg-rose-400 px-1 text-sm text-slate-900;
+  }
+</style>
