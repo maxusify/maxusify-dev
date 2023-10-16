@@ -1,12 +1,15 @@
 ---
-import PageLayout from '@/layouts/PageLayout.astro'
 import { formatDate } from '@/lib/formatDate'
+
+import PageLayout from '@/layouts/PageLayout.astro'
+import PostNav from '@/components/blog/PostNav.astro'
 
 const { frontmatter } = Astro.props
 ---
 
 <PageLayout title={frontmatter.title}>
   <div class='wrapper'>
+    <PostNav tags={frontmatter.tags} />
     <div class='post-image'>
       <img
         src={frontmatter.image?.url}
@@ -17,7 +20,6 @@ const { frontmatter } = Astro.props
       <h1>{frontmatter.title}</h1>
       <h2>
         {formatDate(frontmatter.pubDate)}
-        {frontmatter.tags && ` - ${frontmatter.tags.join(' ')}`}
       </h2>
     </div>
     <div class='post-content'>
@@ -56,10 +58,36 @@ const { frontmatter } = Astro.props
   }
 
   .post-content {
-    @apply text-xl text-slate-300;
+    @apply text-xl text-white;
+  }
+</style>
+
+<style is:inline>
+  .post-content {
+    text-align: justify;
   }
 
-  .post-content > slot > h1 {
-    @apply text-3xl font-bold text-rose-600;
+  .post-content > h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    color: #f43f5e;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-content > h1 {
+    font-size: 1.875rem;
+  }
+
+  .post-content > h2 {
+    font-size: 1.75rem;
+  }
+
+  .post-content > h3 {
+    font-size: 1.5rem;
   }
 </style>
