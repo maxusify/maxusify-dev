@@ -2,7 +2,9 @@
 import NameTag from '@/components/ui/NameTag.astro'
 import PageLayout from '@/layouts/PageLayout.astro'
 
-import { Button } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
+
+import { HOME_BUTTONS } from '@/constants/home-buttons'
 ---
 
 <PageLayout title='Home'>
@@ -14,9 +16,16 @@ import { Button } from '@/components/ui/button'
         <u><code>web</code>/<code>game</code> developer</u> from Poland.
       </h3>
       <div class='hero-buttons'>
-        <Button>My Projects</Button>
-        <Button>My Blog</Button>
-        <Button>Contact with Me</Button>
+        {
+          HOME_BUTTONS.map((button) => (
+            <a
+              href={button.href}
+              class={buttonVariants({ variant: 'default' })}
+            >
+              {button.name}
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
@@ -47,7 +56,7 @@ import { Button } from '@/components/ui/button'
     @apply space-x-3 p-5;
   }
 
-  .hero-buttons > Button {
+  .hero-buttons > a {
     @apply bg-rose-400;
   }
 </style>
