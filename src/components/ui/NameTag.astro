@@ -9,8 +9,8 @@ const { name, href, atSymbol = true } = Astro.props
 ---
 
 <a class='name' href={href || '#'}>
-  { atSymbol && '@' }
-  { name ? name : <slot />}
+  {atSymbol && '@'}
+  {name ? name : <slot />}
 </a>
 
 <style>
