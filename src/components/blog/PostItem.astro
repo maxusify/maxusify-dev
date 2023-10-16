@@ -1,5 +1,6 @@
 ---
 import { formatDate } from '@/lib/formatDate'
+import PostTag from './PostTag.astro'
 
 export interface Props {
   title: string
@@ -16,8 +17,8 @@ export interface Props {
 const { title, pubDate: date, image, category, tags, url } = Astro.props
 ---
 
-<a href={url}>
-  <div class='wrapper'>
+<div class='wrapper'>
+  <a href={url}>
     <div class='post-image'>
       <img src={image?.url} alt={image?.alt || title} />
     </div>
@@ -25,11 +26,11 @@ const { title, pubDate: date, image, category, tags, url } = Astro.props
       <h1>{title}</h1>
       <h2>
         {formatDate(date)}{category && ` - ${category}`}
-        {tags && ` - ${tags.join(' ')}`}
+        {tags && tags.map((tag) => <PostTag name={tag} />)}
       </h2>
     </div>
-  </div>
-</a>
+  </a>
+</div>
 
 <style>
   /* Wrapper style */
@@ -58,7 +59,7 @@ const { title, pubDate: date, image, category, tags, url } = Astro.props
   }
 
   .post-title > h2 {
-    @apply text-sm font-thin text-slate-500;
+    @apply flex gap-2 text-sm font-thin text-slate-500;
   }
 
   .post-title > h3 {
