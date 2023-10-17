@@ -1,12 +1,6 @@
-export type Social = {
-  name: string
-  href: string
-  icon: string
-  bgColor: string
-  textColor: string
-}
+import type { SocialItem } from '@/types/social-item'
 
-export const socials: Social[] = [
+export const socials: SocialItem[] = [
   {
     name: 'GitHub Profile',
     href: 'https://github.com/maxusify',
@@ -26,6 +20,13 @@ export const socials: Social[] = [
     href: 'https://medium.com/@maxusify',
     icon: 'mdi:medium',
     bgColor: 'bg-gray-600',
+    textColor: 'text-slate-100'
+  },
+  {
+    name: 'Twitter',
+    href: 'https://twitter.com/maxusify',
+    icon: 'mdi:twitter',
+    bgColor: 'bg-blue-500',
     textColor: 'text-slate-100'
   }
 ]

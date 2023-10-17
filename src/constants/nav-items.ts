@@ -1,15 +1,11 @@
-type Item = {
-  name: string
-  link: string
-  enabled?: boolean
-}
+import type { NavItem } from '@/types/nav-item'
 
-export const items: Item[] = [
+export const items: NavItem[] = [
   { name: 'Home', link: '/' },
-  { name: 'Blog', link: '/blog' },
   { name: 'About Me', link: '/about' },
-  { name: 'Projects', link: '/projects', enabled: false },
-  { name: 'Contact', link: '/contact', enabled: false }
+  { name: 'Projects', link: '/portfolio' },
+  { name: 'Blog', link: '/blog' },
+  { name: 'Contact', link: '/contact' }
 ]
 
 export default items

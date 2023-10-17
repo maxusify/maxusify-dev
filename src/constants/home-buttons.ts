@@ -1,19 +1,16 @@
-type HomeButton = {
-  name: string
-  href: string
-}
+import type { NavItem } from '@/types/nav-item'
 
-export const HOME_BUTTONS: HomeButton[] = [
+export const HOME_BUTTONS: NavItem[] = [
   {
     name: 'My Projects',
-    href: '/portfolio'
+    link: '/portfolio'
   },
   {
     name: 'My Blog',
-    href: '/blog'
+    link: '/blog'
   },
   {
     name: 'Contact with Me',
-    href: '/contact'
+    link: '/contact'
   }
 ]
