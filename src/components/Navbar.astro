@@ -1,5 +1,5 @@
 ---
-import { items } from '@/constants/nav-items'
+import { NAVIGATION_ITEMS } from '@/constants/nav-items'
 
 export interface Props {
   border?: boolean
@@ -23,7 +23,7 @@ const isActive = (link: string) => {
   <div class='links'>
     <div class:list={['nav-container', { 'nav-active-border': border }]}>
       {
-        items.map((item) => {
+        NAVIGATION_ITEMS.map((item) => {
           if (item.enabled === false) {
             return null
           }

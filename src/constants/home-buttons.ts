@@ -1,5 +1,8 @@
 import type { NavItem } from '@/types/nav-item'
 
+/**
+ * Home Page buttons.
+ */
 export const HOME_BUTTONS: NavItem[] = [
   {
     name: 'My Projects',

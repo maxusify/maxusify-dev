@@ -2,13 +2,13 @@
 import PostGrid from '@/components/blog/PostGrid.astro'
 import PostItem from '@/components/blog/PostItem.astro'
 import PostTag from '@/components/blog/PostTag.astro'
-import { blogTags } from '@/constants/blog-tags'
+import { BLOG_TAGS } from '@/constants/blog-tags'
 import PageLayout from '@/layouts/PageLayout.astro'
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob('../posts/*.{md,mdx}')
+  const allPosts: any = await Astro.glob('../posts/*.{md,mdx}')
 
-  return blogTags.map((tag) => ({
+  return BLOG_TAGS.map((tag) => ({
     params: { tag },
     props: { posts: allPosts }
   }))

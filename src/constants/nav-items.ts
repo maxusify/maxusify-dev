@@ -1,6 +1,9 @@
 import type { NavItem } from '@/types/nav-item'
 
-export const items: NavItem[] = [
+/**
+ * Links for page navigation.
+ */
+export const NAVIGATION_ITEMS: NavItem[] = [
   { name: 'Home', link: '/' },
   { name: 'About Me', link: '/about' },
   { name: 'Projects', link: '/portfolio' },
@@ -8,4 +11,4 @@ export const items: NavItem[] = [
   { name: 'Contact', link: '/contact' }
 ]
 
-export default items
+export default NAVIGATION_ITEMS

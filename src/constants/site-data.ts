@@ -5,7 +5,7 @@ type SiteData = {
   keywords: string[]
 }
 
-export const siteData: SiteData = {
+export const SITE_DATA: SiteData = {
   title: 'maxusify.dev',
   author: 'Michał Pędzik',
   description: 'My personal site/blog/portfolio/place in the Internet.',
@@ -21,4 +21,4 @@ export const siteData: SiteData = {
   ]
 }
 
-export default siteData
+export default SITE_DATA

@@ -1,4 +1,7 @@
-export const blogTags = [
+/**
+ * Available blog tags
+ */
+export const BLOG_TAGS = [
   'coding',
   'elementiar',
   'personal',

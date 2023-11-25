@@ -1,6 +1,9 @@
 import type { SocialItem } from '@/types/social-item'
 
-export const socials: SocialItem[] = [
+/**
+ * Links to social media profiles.
+ */
+export const SOCIAL_ITEMS: SocialItem[] = [
   {
     name: 'GitHub Profile',
     href: 'https://github.com/maxusify',
@@ -13,13 +16,6 @@ export const socials: SocialItem[] = [
     href: 'https://linkedin.com/in/michalpedzik',
     icon: 'mdi:linkedin',
     bgColor: 'bg-sky-600',
-    textColor: 'text-slate-100'
-  },
-  {
-    name: 'Medium Blog',
-    href: 'https://medium.com/@maxusify',
-    icon: 'mdi:medium',
-    bgColor: 'bg-gray-600',
     textColor: 'text-slate-100'
   },
   {
