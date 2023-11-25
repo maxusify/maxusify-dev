@@ -13,7 +13,13 @@ const propsClasses = `${bgColor} ${textColor}`
 ---
 
 <a href={href}>
-  <button class={`flex items-center gap-2 p-3 rounded-2xl ${propsClasses}`}>
+  <button
+    class:list={[
+      `flex items-center gap-2 p-3 rounded-2xl`,
+      { [propsClasses]: true }
+    ]}
+    `]}
+  >
     <Icon name={icon} />
     <span class='text-xl font-bold'>
       <slot />
