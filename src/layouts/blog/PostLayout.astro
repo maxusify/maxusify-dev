@@ -19,7 +19,7 @@ const { frontmatter } = Astro.props
     <div class='post-title'>
       <h1>{frontmatter.title}</h1>
       <h2>
-        {formatDate(frontmatter.pubDate)} | {frontmatter.author}
+        {formatDate(frontmatter.pubDate)}
       </h2>
     </div>
     <div class='post-content'>
@@ -36,11 +36,11 @@ const { frontmatter } = Astro.props
 
   /* Post image style */
   .post-image {
-    @apply mb-5 w-full;
+    @apply mb-5 flex w-full justify-center;
   }
 
   .post-image > img {
-    @apply w-full rounded-md;
+    @apply max-h-[480px] rounded-md;
   }
 
   /* Post title style */
