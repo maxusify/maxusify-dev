@@ -3,7 +3,10 @@ import PostGrid from '@/components/blog/PostGrid.astro'
 import PostItem from '@/components/blog/PostItem.astro'
 import PageLayout from '@/layouts/PageLayout.astro'
 
+// Get all posts
 const allPosts = await Astro.glob('./posts/*.{md,mdx}')
+
+// Sort posts by date
 const sortedPosts = allPosts.sort((a, b) => {
   const aDate = Number(new Date(a.frontmatter.pubDate))
   const bDate = Number(new Date(b.frontmatter.pubDate))
@@ -11,6 +14,7 @@ const sortedPosts = allPosts.sort((a, b) => {
   return bDate - aDate
 })
 
+// Get newest post and older posts
 const newestPost = sortedPosts[0]
 const olderPosts = sortedPosts.slice(1)
 ---
